@@ -9,7 +9,7 @@ RM			=	rm -rf
 #Colors:
 GREEN		=	\e[92;5;118m
 YELLOW		=	\e[93;5;226m
-GRAY		=	\e[33;2;37m
+GREY		=	\e[33;2;37m
 RESET		=	\e[0m
 CURSIVE		=	\e[33;3m
 
