@@ -24,10 +24,10 @@ $(NAME):
 
 clean:
 			@$(RM) $(NAME)
-			@printf "$(GREY)	-$(NAME) removed!$(RESET)"
+			@printf "$(GREY)	-$(NAME) removed!$(RESET)\n"
 
 fclean:
 			@$(RM) $(NAME)
-			@printf "$(GREY)	-$(NAME) removed!$(RESET)"
+			@printf "$(GREY)	-$(NAME) removed!$(RESET)\n"
 
 re:			clean all
