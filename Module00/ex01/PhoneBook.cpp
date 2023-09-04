@@ -47,13 +47,13 @@ std::string PhoneBook::getstream(std::string prompt)
     while (input == "")
     {
         std::cout << "Field cannot be empty!" << std::endl;
-        std::cout << promt;
+        std::cout << prompt;
         std::cin >> input;
     }
     return input;
 }
 
-void    PhoneBook::addcontact()
+void    PhoneBook::add_contact()
 {
     if (this->contact_list[this->last_contact].get_firstname() == "")
         std::cout << "Contact is being added." << std::endl;

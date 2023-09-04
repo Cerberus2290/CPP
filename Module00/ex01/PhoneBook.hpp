@@ -23,8 +23,19 @@ class PhoneBook
     public:
         PhoneBook();
         ~PhoneBook();
+        void    add_contact();
+        void    search_contact();
+
     private:
-        
+        std::string getstream(std::string   prompt);
+        std::string overwriteContact();
+
+        void    print_stuff(std::string stream);
+        void    print_details(int   index);
+
+        int last_contact;
+        int total_id;
+        _contact    *contact_list;
 };
 
 int num_array(std::string str);

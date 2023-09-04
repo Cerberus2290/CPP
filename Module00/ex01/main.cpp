@@ -34,8 +34,33 @@ int num_array(std::string str)
 
 int main()
 {
+    PhoneBook   phone_list;
+
+    std::string input;
     while (1)
     {
         main_menu();
+        std::cin >> input;
+        std::cout << LINE << std::endl;
+        if (!num_array(input))
+        {
+            std::cout << "Enter menu option [1-3]" << std::endl << LINE << std::endl;
+            continue ;
+        }
+        switch  (stoi(input))
+        {
+            case 1:
+                phone_list.add_contact();
+                break ;
+            case 2:
+                phone_list.search_contact();
+                break ;
+            case 3:
+                std::cout << "Exiting Phonebook" << std::endl << LINE << std::endl;
+                return 0;
+            default:
+                std::cout << "Input incorrect! Enter a valid menu number [1-3]" << std::endl;
+                break ;
+        }
     }
 }
