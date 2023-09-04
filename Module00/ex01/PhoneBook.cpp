@@ -32,7 +32,7 @@ std::string PhoneBook::overwriteContact()
     std::cout << this->contact_list[this->last_contact].get_lastname() << std::endl;
     std::cout << "Continue ?\n" << "Enter [N] : No, do not overwrite" << std::endl;
     std::cout << "Enter [Y] : Yes, overwrite contact\nSelection: ";
-    std::string selection:
+    std::string selection;
     std::cin >> selection;
     std::cout << LINE << std::endl;
     return selection;
@@ -83,4 +83,58 @@ void    PhoneBook::print_stuff(std::string  stream)
             std::cout << " ";
         std::cout << stream;
     }
+    else
+    {
+        for (int i = 0; i < 9; i++)
+        {
+            std::cout << stream[i];
+        }
+        std::cout << ".";
+    }
+}
+
+void    PhoneBook::print_details(int index)
+{
+    for (int i = 0; i < 8; i++)
+    {
+        if (contact_list[i].get_id() == index)
+        {
+            std::cout << contact_list[i].get_id() << "(index) is firstname: ";
+            std::cout << contact_list[i].get_firstname() << ", lastname: ";
+            std::cout << contact_list[i].get_lastname() << ", Secret ID: ";
+            std::cout << contact_list[i].get_secretid() << ", Phone Number: ";
+            std::cout << contact_list[i].get_phone() << ", Networth: ";
+            std::cout << contact_list[i].get_networth() << std::endl;
+        }
+    }
+}
+
+void    PhoneBook::search_contact()
+{
+    std::string list_index;
+
+    std::cout << "|     index|first name| last name| Secret ID|" << std::endl;
+    for (int i = 0; i < 8; i++)
+    {
+        if (contact_list[i].get_id() == 0)
+            break ;
+        std::cout << "|";
+        print_stuff(std::to_string(contact_list[i].get_id()));
+        std::cout << "|";
+        print_stuff(contact_list[i].get_firstname());
+        std::cout << "|";
+        print_stuff(contact_list[i].get_lastname());
+        std::cout << "|";
+        print_stuff(contact_list[i].get_secretid());
+        std::cout << "|";
+        std::cout << std::endl;
+    }
+    std::cout << "Enter index number for more detail\nOtherwise will return to main menu.";
+    std::cin >> list_index;
+    if (!num_array(list_index))
+        std::cout << "Enter index number [1-8]";
+    else
+        print_details(stoi(list_index));
+    std::cout << "Returning to main menu" << std::endl;
+    std::cout << LINE << std::endl;
 }
