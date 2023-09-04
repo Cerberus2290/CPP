@@ -71,7 +71,16 @@ void    PhoneBook::add_contact()
     std::cout << "New Contact added to phone book. Return to main menu." << std::endl;
     if (++(this->last_contact) >= 8)
         this->last_contact = 0;
-    std::cout << LINE << std:endl;
+    std::cout << LINE << std::endl;
 }
 
-
+void    PhoneBook::print_stuff(std::string  stream)
+{
+    if (stream.length() <= 10)
+    {
+        int space = 10 - stream.length();
+        for (; space > 0; space--)
+            std::cout << " ";
+        std::cout << stream;
+    }
+}
