@@ -6,7 +6,7 @@
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 08:48:08 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/09/01 10:07:47 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/09/05 08:45:11 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,7 +129,7 @@ void    PhoneBook::search_contact()
         std::cout << "|";
         std::cout << std::endl;
     }
-    std::cout << "Enter index number for more detail\nOtherwise will return to main menu.";
+    std::cout << "Enter index number for more detail.\nOtherwise will return to main menu. ";
     std::cin >> list_index;
     if (!num_array(list_index))
         std::cout << "Enter index number [1-8]";
