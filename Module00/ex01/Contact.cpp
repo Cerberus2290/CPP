@@ -16,32 +16,32 @@ _contact::_contact()
     this->secretid = "";
 }
 
-int _contact::get_id()
+int _contact::get_id() const
 {
     return  this->id;
 }
 
-std::string _contact::get_firstname()
+std::string _contact::get_firstname() const
 {
     return  this->firstname;
 }
 
-std::string _contact::get_lastname()
+std::string _contact::get_lastname() const
 {
     return  this->lastname;
 }
 
-std::string _contact::get_secretid()
+std::string _contact::get_secretid() const
 {
     return  this->secretid;
 }
 
-std::string _contact::get_phone()
+std::string _contact::get_phone() const
 {
     return  this->phone;
 }
 
-std::string _contact::get_networth()
+std::string _contact::get_networth() const
 {
     return  this->networth;
 }

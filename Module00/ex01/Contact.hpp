@@ -9,12 +9,12 @@ class _contact
         _contact();
         _contact(int id, std::string firstname, std::string lastname, std::string secretid);
 
-        int get_id();
-        std::string get_firstname();
-        std::string get_lastname();
-        std::string get_secretid();
-        std::string get_phone();
-        std::string get_networth();
+        int get_id() const;
+        std::string get_firstname() const;
+        std::string get_lastname() const;
+        std::string get_secretid() const;
+        std::string get_phone() const;
+        std::string get_networth() const;
 
         void    set_id(int id);
         void    set_firstname(std::string stream);
@@ -24,8 +24,6 @@ class _contact
         void    set_networth(std::string stream);
     
     private:
-        std::string set_util(std::string stream);
-
         int id;
         std::string firstname;
         std::string lastname;
