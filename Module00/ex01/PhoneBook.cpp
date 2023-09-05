@@ -6,7 +6,7 @@
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 08:48:08 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/09/05 08:45:11 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/09/05 02:56:01 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,12 @@ std::string PhoneBook::getstream(std::string prompt)
 
 void    PhoneBook::add_contact()
 {
+    if (this->contact_list[this->last_contact].get_firstname() != "")
+    {
+        std::string overwriteChoice = overwriteContact();
+        if (overwriteChoice == "N" || overwriteChoice == "n")
+            return ;
+    }
     if (this->contact_list[this->last_contact].get_firstname() == "")
         std::cout << "Contact is being added." << std::endl;
     else
