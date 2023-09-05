@@ -3,19 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 08:15:26 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/09/04 18:21:15 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/09/05 06:33:08 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <sstream>
 #include "PhoneBook.hpp"
 
 void    main_menu()
 {
-    std::cout << "Follow the steps in order [1-3]:" << std::endl;
+    std::cout << "-MAIN MENU-\nEnter your choice [1-3]:" << std::endl;
     std::cout << "1 : ADD contact" << std::endl;
     std::cout << "2 : SEARCH contact" << std::endl;
     std::cout << "3 : EXIT program" << std::endl;
@@ -32,6 +33,15 @@ int num_array(std::string str)
     return 1;
 }
 
+int ft_stoi(const std::string &str)
+{
+    std::istringstream iss(str);
+    int value;
+    if (!(iss >> value))
+        return 0;
+    return value;
+}
+
 int main()
 {
     PhoneBook   phone_list;
@@ -42,12 +52,13 @@ int main()
         main_menu();
         std::cin >> input;
         std::cout << LINE << std::endl;
-        if (!num_array(input))
+        int choice = ft_stoi(input);
+        if (choice < 1 || choice > 3)
         {
             std::cout << "Enter menu option [1-3]" << std::endl << LINE << std::endl;
             continue ;
         }
-        switch  (stoi(input))
+        switch  (choice)
         {
             case 1:
                 phone_list.add_contact();
@@ -63,4 +74,5 @@ int main()
                 break ;
         }
     }
+    return 0;
 }

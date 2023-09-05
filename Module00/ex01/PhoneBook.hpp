@@ -6,7 +6,7 @@
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 08:48:15 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/09/01 08:48:16 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/09/05 06:25:29 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,6 @@ class PhoneBook
 };
 
 int num_array(std::string str);
+int ft_stoi(const std::string &str);
 
 #endif

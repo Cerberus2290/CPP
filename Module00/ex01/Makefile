@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+         #
+#    By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/04 17:32:54 by tom42wob_ws       #+#    #+#              #
-#    Updated: 2023/09/04 18:22:32 by tstrassb         ###   ########.fr        #
+#    Updated: 2023/09/05 07:04:06 by tstrassb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME	=	PhoneBook
 
 CC		=	c++
 
-CFLAGS	=	-Wall -Wextra -Werror #-std=c++98
+CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
 RM		=	rm -rf
 
