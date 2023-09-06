@@ -6,7 +6,7 @@
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 08:15:26 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/09/06 06:25:17 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/09/06 06:27:54 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int main()
         {
             if (std::cin.eof())
             {
-                std::cout << "EOF (CRTL+D) dectected. Exiting Phonebook" << std::endl;
+                std::cout << "EOF (CRTL+D) dectected.\nExiting Phonebook" << std::endl;
                 break ;
             }
             std::cerr << "Input error. Exiting Phonebook" << std::endl;
