@@ -6,7 +6,7 @@
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 08:15:26 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/09/05 06:33:08 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/09/06 06:25:17 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,16 @@ int main()
     while (1)
     {
         main_menu();
-        std::cin >> input;
+        if (!(std::cin >> input))
+        {
+            if (std::cin.eof())
+            {
+                std::cout << "EOF (CRTL+D) dectected. Exiting Phonebook" << std::endl;
+                break ;
+            }
+            std::cerr << "Input error. Exiting Phonebook" << std::endl;
+            break ;
+        }
         std::cout << LINE << std::endl;
         int choice = ft_stoi(input);
         if (choice < 1 || choice > 3)
