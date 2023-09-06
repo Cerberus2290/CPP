@@ -6,7 +6,7 @@
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 06:49:21 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/09/06 06:50:48 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/09/06 07:42:42 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int main()
 {
-    Zombie  zom1("EA");
-    Zombie  *zom2 = newZombie("CDPR");
+    Zombie  zom1("Well spoken Zombie1");
+    Zombie  *zom2 = newZombie("Well spoken Zombie2");
     zom2->announce();
-    randomChump("mwahahahaha");
+    randomChump("Well spoken Zombie3");
     delete(zom2);
 }
