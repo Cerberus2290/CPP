@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 13:14:06 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/09/08 13:17:16 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/09/08 07:52:57 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HUMANA_HPP
 # define HUMANA_HPP
 
-#include "Weapon.hpp"
 #include <string>
+#include "Weapon.hpp"
 
 class   HumanA
 {

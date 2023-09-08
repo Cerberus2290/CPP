@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 13:11:19 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/09/08 13:12:58 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/09/08 07:52:27 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,11 @@ Weapon::Weapon(std::string type)
 }
 
 Weapon::Weapon()
-{   
+{
+}
+
+Weapon::~Weapon()
+{
 }
 
 std::string Weapon::getType()
