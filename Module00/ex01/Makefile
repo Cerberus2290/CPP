@@ -6,7 +6,7 @@
 #    By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/04 17:32:54 by tom42wob_ws       #+#    #+#              #
-#    Updated: 2023/09/05 07:04:06 by tstrassb         ###   ########.fr        #
+#    Updated: 2023/09/08 09:18:48 by tstrassb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,4 +54,3 @@ fclean:		clean
 			@printf "$(YELLOW)- $(NAME) cleaned!\n$(RESET)"
 
 re:			fclean all
-			
