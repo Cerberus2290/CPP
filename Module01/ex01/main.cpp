@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 15:03:48 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/09/07 15:13:29 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/09/12 02:57:55 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,5 @@ int main()
         horde[i].announce();
     
     delete[](horde);
+    return 0;
 }

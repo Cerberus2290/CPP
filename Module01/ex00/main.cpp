@@ -6,7 +6,7 @@
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 06:49:21 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/09/06 07:42:42 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/09/12 02:57:46 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,5 @@ int main()
     zom2->announce();
     randomChump("Well spoken Zombie3");
     delete(zom2);
+    return 0;
 }

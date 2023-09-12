@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 16:05:00 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/09/11 16:15:49 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/09/12 02:58:28 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,5 @@ int main(int argc, char **argv)
     {
         levelHarl.complain(argv[1]);
     }
+    return 0;
 }

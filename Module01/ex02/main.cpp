@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 12:49:48 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/09/08 13:01:27 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/09/12 02:58:03 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,5 @@ int main()
     std::cout << "STR - value         : " << str << std::endl;
     std::cout << "stringPTR - value   : " << *stringPTR << std::endl;
     std::cout << "stringREF - value   : " << stringREF << std::endl;
+    return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 09:14:09 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/09/08 09:18:33 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/09/12 02:58:19 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,5 @@ int main(int argc, char **argv)
     
     ReplaceFiles thisFile(argv[1]);
     thisFile.replace(argv[2], argv[3]);
+    return 0;
 }
