@@ -6,7 +6,7 @@
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 11:55:52 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/10/04 11:51:13 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/10/04 12:58:27 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,18 @@
 
 ClapTrap::ClapTrap() : _name("Empty"), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-    std::cout << _name << " has been created --> default constructor" << std::endl;
+    std::cout << _name << " has been created. --> default constructor" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-    std::cout << _name << " has been created --> string constructor" << std::endl;
+    std::cout << _name << " has been created. --> string constructor" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &claptrap)
 {
     *this = claptrap;
-    std::cout << _name << " has been created --> copy constructor" << std::endl;
+    std::cout << _name << " has been created. --> copy constructor" << std::endl;
 }
 
 // [**** Overload Assignment Operator ****]
@@ -51,7 +51,7 @@ void    ClapTrap::attack(const std::string& target)
         std::cout << _name << " is out of energy. It cannot act." << std::endl;
     else
     {
-        std::cout << _name << " attacks " << target << _attackDamage << " points of damage!" << std::endl;
+        std::cout << _name << " attacks " << target << " " << _attackDamage << " points of damage!" << std::endl;
         --_energyPoints;
     }
 }
@@ -81,6 +81,14 @@ void    ClapTrap::beRepaired(unsigned int amount)
         std::cout << _name << " has no more energy left to repair!" << std::endl;
     else
     {
-        
+        std::cout << _name << " repairs itself and gains " << amount << " hit points!" << std::endl;
+        --_energyPoints;
     }
+}
+
+// [**** Destructor ****]
+
+ClapTrap::~ClapTrap()
+{
+    std::cout << _name << " has been deconstructed. --> deconstructor" << std::endl;
 }
