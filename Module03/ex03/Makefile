@@ -6,7 +6,7 @@
 #    By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/05 10:18:39 by tstrassb          #+#    #+#              #
-#    Updated: 2023/10/05 11:23:42 by tstrassb         ###   ########.fr        #
+#    Updated: 2023/10/05 11:46:40 by tstrassb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME	=	ClapTrap
 
 CC		=	c++
 
-CFLAGS	=	-Wall -Wextra -Wshadow -std=c++98
+CFLAGS	=	-Wall -Wextra -Werror -Wshadow -std=c++98
 
 RM		=	rm -rf
 

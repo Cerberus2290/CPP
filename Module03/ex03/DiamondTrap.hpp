@@ -6,7 +6,7 @@
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 10:22:20 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/10/05 11:24:13 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/10/05 11:44:26 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
-class   DiamondTrap:    public  ScavTrap,   public  FragTrap
+class   DiamondTrap:    virtual public  ScavTrap,   virtual public  FragTrap
 {
     public:
         // Constructors

@@ -6,7 +6,7 @@
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 10:21:14 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/10/05 10:21:24 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/10/05 11:45:39 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 
-class   FragTrap : public ClapTrap
+class   FragTrap : virtual public ClapTrap
 {
     public:
         // Constructors
@@ -27,7 +27,7 @@ class   FragTrap : public ClapTrap
         // Member functions
             void    highFivesGuys();
         // Destructor
-            ~FragTrap();
+            virtual ~FragTrap();
 };
 
 #endif

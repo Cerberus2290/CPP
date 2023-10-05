@@ -6,7 +6,7 @@
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 10:20:39 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/10/05 10:20:54 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/10/05 11:45:44 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 
-class   ScavTrap: public    ClapTrap
+class   ScavTrap: virtual public    ClapTrap
 {
     public:
         // Constructors
@@ -28,7 +28,7 @@ class   ScavTrap: public    ClapTrap
             void    attack(const std::string& target);
             void    guardGate();
         // Destructor
-            ~ScavTrap();
+            virtual ~ScavTrap();
 };
 
 #endif
