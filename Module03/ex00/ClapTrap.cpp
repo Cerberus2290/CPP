@@ -6,7 +6,7 @@
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 11:55:52 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/10/04 12:58:27 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/10/05 09:22:03 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void    ClapTrap::attack(const std::string& target)
         std::cout << _name << " is out of energy. It cannot act." << std::endl;
     else
     {
-        std::cout << _name << " attacks " << target << " " << _attackDamage << " points of damage!" << std::endl;
+        std::cout << _name << " attacks " << target << " for " << _attackDamage << " points of damage!" << std::endl;
         --_energyPoints;
     }
 }

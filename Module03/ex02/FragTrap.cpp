@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 14:10:16 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/10/04 14:20:33 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/10/05 10:04:12 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ FragTrap::FragTrap() : ClapTrap()
     _hitPoints = 100;
     _energyPoints = 100;
     _attackDamage = 30;
-    std::cout << "FragTrap " << _name << " has been created --> default constructor" << std::endl;
+    std::cout << "[FragTrap] " << _name << " has been created. --> default constructor" << std::endl;
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
@@ -26,12 +26,12 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
     _hitPoints = 100;
     _energyPoints = 100;
     _attackDamage = 30;
-    std::cout << "FragTrap " << _name << " has been created --> string constructor" << std::endl;
+    std::cout << "[FragTrap] " << _name << " has been created. --> string constructor" << std::endl;
 }
 
 FragTrap::FragTrap(const FragTrap &fragtrap) : ClapTrap(fragtrap)
 {
-    std::cout << "Fragtrap " << _name << " has been created --> copy constructor" << std::endl;
+    std::cout << "[Fragtrap] " << _name << " has been created. --> copy constructor" << std::endl;
 }
 
 // [**** Overload Assignment Operator ****]
@@ -53,5 +53,5 @@ void    FragTrap::highFivesGuys()
 // [**** Destructor ****]
 FragTrap::~FragTrap()
 {
-    std::cout << "FragTrap " << _name << " has been deconstructed --> deconstructor" << std::endl;
+    std::cout << "[FragTrap] " << _name << " has been deconstructed. --> deconstructor" << std::endl;
 }

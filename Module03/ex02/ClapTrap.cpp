@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 14:08:58 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/10/04 14:09:11 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/10/05 10:03:05 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,18 @@
 
 ClapTrap::ClapTrap() : _name("Empty"), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-    std::cout << _name << " has been created. --> default constructor" << std::endl;
+    std::cout << "[Claptrap] " << _name << " has been created. --> default constructor" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-    std::cout << _name << " has been created. --> string constructor" << std::endl;
+    std::cout << "[Claptrap] " << _name << " has been created. --> string constructor" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &claptrap)
 {
     *this = claptrap;
-    std::cout << _name << " has been created. --> copy constructor" << std::endl;
+    std::cout << "[Claptrap] " << _name << " has been created. --> copy constructor" << std::endl;
 }
 
 // [**** Overload Assignment Operator ****]
@@ -90,5 +90,5 @@ void    ClapTrap::beRepaired(unsigned int amount)
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << _name << " has been deconstructed. --> deconstructor" << std::endl;
+    std::cout << "[Claptrap] " << _name << " has been deconstructed. --> deconstructor" << std::endl;
 }

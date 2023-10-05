@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 14:09:26 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/10/04 14:09:37 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/10/05 10:03:59 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ ScavTrap::ScavTrap() : ClapTrap()
     _hitPoints = 100;
     _energyPoints = 50;
     _attackDamage = 20;
-    std::cout << "ScavTrap " << _name << " has been created --> default constructor" << std::endl;
+    std::cout << "[ScavTrap] " << _name << " has been created. --> default constructor" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
@@ -26,7 +26,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
     _hitPoints = 100;
     _energyPoints = 50;
     _attackDamage = 20;
-    std::cout << "ScavTrap " << _name << " has been created --> string constructor" << std::endl;
+    std::cout << "[ScavTrap] " << _name << " has been created. --> string constructor" << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &scavtrap) : ClapTrap(scavtrap)
@@ -34,7 +34,7 @@ ScavTrap::ScavTrap(const ScavTrap &scavtrap) : ClapTrap(scavtrap)
     _hitPoints = 100;
     _energyPoints = 50;
     _attackDamage = 20;
-    std::cout << "ScavTrap " << _name << " has been created --> copy constructor" << std::endl;
+    std::cout << "[ScavTrap] " << _name << " has been created. --> copy constructor" << std::endl;
 }
 
 // [**** Overload Assignment Operator ****]
@@ -69,5 +69,5 @@ void    ScavTrap::guardGate()
 // [**** Deconstructor ****]
 ScavTrap::~ScavTrap()
 {
-    std::cout << "ScavTrap " << _name << " has been deconstructed --> deconstructor" << std::endl; 
+    std::cout << "[ScavTrap] " << _name << " has been deconstructed. --> deconstructor" << std::endl; 
 }

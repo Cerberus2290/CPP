@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 14:22:16 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/10/04 14:25:10 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/10/05 09:13:16 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,5 @@ int main( void )
 	scavbot.attack("Fragbot");
 	fragbot.takeDamage(20);
 
-    return 0;    
+    return EXIT_SUCCESS;
 }
