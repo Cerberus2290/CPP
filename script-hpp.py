@@ -49,7 +49,7 @@ file_path = os.path.join(home_directory, relative_path)
 os.makedirs(os.path.dirname(file_path), exist_ok=True)
 
 try:
-    with open(file_path, 'w') as file:
+    with open(file_path, 'a') as file:
         file.write(lines)
     print('Success!', file_path)
 except Exception as e:

@@ -1,49 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/05 15:28:35 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/10/06 09:35:42 by tstrassb         ###   ########.fr       */
+/*   Created: 2023/10/06 09:14:37 by tstrassb          #+#    #+#             */
+/*   Updated: 2023/10/06 09:36:18 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incl/Dog.hpp"
+#include "../incl/WrongCat.hpp"
 
 // [**** Constructors ****]
 
-Dog::Dog()
+WrongCat::WrongCat()
 {
-    _type = "Dog";
-    std::cout << "Dog has been created. --> default constructor" << std::endl;
+    _type = "WrongCat";
+    std::cout << "WrongCat has been created. --> default constructor" << std::endl;
 }
 
-Dog::Dog(const Dog & dog) : Animal(dog)
+WrongCat::WrongCat(const WrongCat &wrongcat) : WrongAnimal(wrongcat)
 {
-    *this = dog;
-    std::cout << "Dog has been created. --> copy constructor" << std::endl;
+    *this = wrongcat;
+    std::cout << "WrongCat has been created. --> copy constructor" << std::endl;
 }
 
 // [**** Overload Assignment Operators ****]
 
-Dog&    Dog::operator=(const Dog &dog)
+WrongCat&   WrongCat::operator=(const WrongCat &wrongcat)
 {
-    _type = dog._type;
+    _type = wrongcat._type;
     return *this;
-}
-
-// [**** Member Functions ****]
-
-void    Dog::makeSound() const
-{
-    std::cout << "Woof" << std::endl;
 }
 
 // [**** Destructor ****]
 
-Dog::~Dog()
+WrongCat::~WrongCat()
 {
-    std::cout << "Dog has been destroyed. --> deconstructor" << std::endl;
+    std::cout << "WrongCat has been destroyed. --> deconstructor" << std::endl;
 }

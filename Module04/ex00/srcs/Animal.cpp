@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 13:24:40 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/10/05 13:31:39 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/10/06 09:35:23 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "incl/Animal.hpp"
+#include "../incl/Animal.hpp"
 
 // [**** Constructors ****]
 

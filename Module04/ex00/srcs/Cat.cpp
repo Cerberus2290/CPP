@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 14:12:34 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/10/05 15:26:51 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/10/06 09:35:36 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "incl/Cat.hpp"
+#include "../incl/Cat.hpp"
 
 // [**** Constructors ****]
 
