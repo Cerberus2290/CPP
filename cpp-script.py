@@ -1,5 +1,23 @@
 import os
+import readline
 import sys
+
+def path_completer(text, state):
+    dir_part, file_part = os.path.split(text)
+
+    current_dir = dir_part if dir_part else "./"
+    entries = os.listdir(current_dir)
+
+    matches = [entry for entry in entries if entry.startswith(file_part)]
+
+    if state < len(matches):
+        return os.path.join(dir_part, matches[state])
+    else:
+        return None
+
+readline.set_completer_delims('\t')
+readline.parse_and_bind('tab: complete')
+readline.set_completer(path_completer)
 
 while True:
     print("Choose an option:")
@@ -33,10 +51,9 @@ class   *
 #endif
 """
 
-        relative_path = input("Enter absolute path to [.hpp] file: ")
+        relative_path = input("Enter path to [.hpp] file: ")
 
-        home_directory = os.path.expanduser("~")
-        file_path = os.path.join(home_directory, relative_path)
+        file_path = os.path.join(os.getcwd(), relative_path)
 
         os.makedirs(os.path.dirname(file_path), exist_ok=True)
 
@@ -76,7 +93,7 @@ all:		$(NAME)
 
 $(NAME):	$(OBJ) $(HEADERS)
 			@$(CC) $(OBJ) -o $(NAME)
-			@printf	"$(GREEN)- $(NAME) ready!\n$(RESET)"
+			@printf	"$(GREEN)- $(NAME) ready!\\n$(RESET)"
 
 $(OBJ_DIR)/%.o: %.cpp $(HEADERS)
 				@mkdir -p $(dir $@)
@@ -84,24 +101,23 @@ $(OBJ_DIR)/%.o: %.cpp $(HEADERS)
 
 clean:
 			@$(RM) $(OBJ_DIR) $(OBJ)
-			@printf "$(GREY)- Object files cleaned!\n$(RESET)"
+			@printf "$(GREY)- Object files cleaned!\\n$(RESET)"
 
 fclean:		clean
 			@$(RM) $(NAME)
-			@printf "$(YELLOW)- $(NAME) cleaned!\n$(RESET)"
+			@printf "$(YELLOW)- $(NAME) cleaned!\\n$(RESET)"
 
 re:			fclean all
 """
 
-        relative_path = input('Enter absolute path to Makefile: ')
+        relative_path = input('Enter path to Makefile: ')
 
-        home_directory = os.path.expanduser("~")
-        file_path = os.path.join(home_directory, relative_path)
+        file_path = os.path.join(os.getcwd(), relative_path)
 
         os.makedirs(os.path.dirname(file_path), exist_ok=True)
 
         try:
-            with open(file_path, 'a') as file:
+            with open(file_path, 'w') as file:
                 file.write(makefile_content)
             print('SUCCESS!\nMakefile template successfully written to:', file_path)
             sys.exit(0)
