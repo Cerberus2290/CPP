@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/10/06 09:41:09 by tstrassb          #+#    #+#              #
-#    Updated: 2023/10/06 09:41:14 by tstrassb         ###   ########.fr        #
+#    Created: 2023/10/06 13:27:23 by tstrassb          #+#    #+#              #
+#    Updated: 2023/10/06 14:06:44 by tstrassb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=   
+NAME	=   Polymorphism
 
 CC		=	c++
 
@@ -20,7 +20,7 @@ RM		=	rm -rf
 
 OBJ_DIR	=	.objectFiles
 
-MAIN	=	
+MAIN	=	Animal Brain Cat Dog main WrongAnimal WrongCat
 
 SRCS	=	$(addsuffix .cpp, $(addprefix srcs/, $(MAIN)))
 OBJ		=	$(addprefix $(OBJ_DIR)/, $(SRCS:cpp=o))
@@ -37,8 +37,7 @@ all:		$(NAME)
 
 $(NAME):	$(OBJ) $(HEADERS)
 			@$(CC) $(OBJ) -o $(NAME)
-			@printf	"$(GREEN)- $(NAME) ready!
-$(RESET)"
+			@printf	"$(GREEN)- $(NAME) ready!\n$(RESET)"
 
 $(OBJ_DIR)/%.o: %.cpp $(HEADERS)
 				@mkdir -p $(dir $@)
@@ -46,12 +45,10 @@ $(OBJ_DIR)/%.o: %.cpp $(HEADERS)
 
 clean:
 			@$(RM) $(OBJ_DIR) $(OBJ)
-			@printf "$(GREY)- Object files cleaned!
-$(RESET)"
+			@printf "$(GREY)- Object files cleaned!\n$(RESET)"
 
 fclean:		clean
 			@$(RM) $(NAME)
-			@printf "$(YELLOW)- $(NAME) cleaned!
-$(RESET)"
+			@printf "$(YELLOW)- $(NAME) cleaned!\n$(RESET)"
 
 re:			fclean all
