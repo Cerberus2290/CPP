@@ -1,40 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/06 08:43:11 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/10/09 14:53:15 by tstrassb         ###   ########.fr       */
+/*   Created: 2023/10/06 13:29:18 by tstrassb          #+#    #+#             */
+/*   Updated: 2023/10/09 14:49:57 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-# define WRONGANIMAL_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-#include <cstdlib>
-#include <string>
 #include <iostream>
+#include <string>
 
-class   WrongAnimal
+#define BRAIN_SIZE  100
+
+class   Brain
 {
     public:
         // Constructor
-            WrongAnimal();
-            WrongAnimal(const WrongAnimal &wronganimal);
+            Brain();
+            Brain(const Brain &brain);
         // Overload Assignment Operator
-            WrongAnimal& operator=(const WrongAnimal &wronganimal);
-        // Member Function
-            void    makeSound() const;
-        // Getter Function
-            std::string getType() const;
+            Brain& operator=(const Brain &brain);
         // Destructor
-            ~WrongAnimal();
+            ~Brain();
 
-    protected:
+    private:
         // Attributes
-            std::string _type;
+            std::string _ideas[BRAIN_SIZE];
 };
 
 #endif

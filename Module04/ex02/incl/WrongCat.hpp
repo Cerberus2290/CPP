@@ -1,40 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/06 08:43:11 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/10/09 14:53:15 by tstrassb         ###   ########.fr       */
+/*   Created: 2023/10/06 09:11:19 by tstrassb          #+#    #+#             */
+/*   Updated: 2023/10/09 14:54:21 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-# define WRONGANIMAL_HPP
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-#include <cstdlib>
-#include <string>
-#include <iostream>
+#include "WrongAnimal.hpp"
 
-class   WrongAnimal
+class   WrongCat : public   WrongAnimal
 {
     public:
         // Constructor
-            WrongAnimal();
-            WrongAnimal(const WrongAnimal &wronganimal);
+            WrongCat();
+            WrongCat(const WrongCat &wrongcat);
         // Overload Assignment Operator
-            WrongAnimal& operator=(const WrongAnimal &wronganimal);
-        // Member Function
-            void    makeSound() const;
-        // Getter Function
-            std::string getType() const;
+            WrongCat& operator=(const WrongCat &wrongcat);
         // Destructor
-            ~WrongAnimal();
-
-    protected:
-        // Attributes
-            std::string _type;
+            ~WrongCat();
 };
 
 #endif

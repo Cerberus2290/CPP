@@ -6,7 +6,7 @@
 /*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 09:11:19 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/10/06 09:14:11 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/10/09 14:54:05 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class   WrongCat : public   WrongAnimal
         // Overload Assignment Operator
             WrongCat& operator=(const WrongCat &wrongcat);
         // Destructor
-        ~WrongCat();
+            ~WrongCat();
 };
 
 #endif

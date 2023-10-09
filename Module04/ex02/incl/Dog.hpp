@@ -1,40 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/06 08:43:11 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/10/09 14:53:15 by tstrassb         ###   ########.fr       */
+/*   Created: 2023/10/05 15:21:28 by tstrassb          #+#    #+#             */
+/*   Updated: 2023/10/09 14:52:44 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-# define WRONGANIMAL_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
-#include <cstdlib>
-#include <string>
-#include <iostream>
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-class   WrongAnimal
+class   Dog : public    Animal
 {
     public:
         // Constructor
-            WrongAnimal();
-            WrongAnimal(const WrongAnimal &wronganimal);
+            Dog();
+            Dog(const Dog &dog);
         // Overload Assignment Operator
-            WrongAnimal& operator=(const WrongAnimal &wronganimal);
+            Dog& operator=(const Dog &dog);
         // Member Function
             void    makeSound() const;
-        // Getter Function
-            std::string getType() const;
         // Destructor
-            ~WrongAnimal();
-
-    protected:
+            ~Dog();
+    
+    private:
         // Attributes
-            std::string _type;
+            Brain   *_brain;
 };
 
 #endif
