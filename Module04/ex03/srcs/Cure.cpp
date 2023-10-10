@@ -6,11 +6,11 @@
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 11:32:50 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/10/10 11:41:58 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/10/10 13:23:35 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cure.hpp"
+#include "../incl/Cure.hpp"
 
 // [**** Constructors ****]
 
@@ -57,7 +57,7 @@ Cure* Cure::clone() const
 
 void    Cure::use(ICharacter &target)
 {
-    std::cout << "[ heals " << target.getName() << "'s wounds]" << std::endl;
+    std::cout << "[ heals " << target.getName() << "'s wounds ]" << std::endl;
 }
 
 // [**** Destructor ****]
