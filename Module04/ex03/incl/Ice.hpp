@@ -1,42 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/09 15:10:13 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/10/10 10:22:37 by tstrassb         ###   ########.fr       */
+/*   Created: 2023/10/10 10:00:55 by tstrassb          #+#    #+#             */
+/*   Updated: 2023/10/10 10:04:10 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AMATERIA_HPP
-# define AMATERIA_HPP
+#ifndef ICE_HPP
+# define ICE_HPP
 
-#include <cstdlib>
-#include <string>
-#include <iostream>
+#include "AMateria.hpp"
 #include "ICharacter.hpp"
 
-class   AMateria
+class   Ice : public AMateria
 {
-    protected:
-        std::string _type;
-
     public:
         // Constructor
-            AMateria();
-            AMateria(const AMateria &amateria);
-            AMateria(std::string const &type);
+            Ice();
+            Ice(const Ice &ice);
+            Ice(std::string const &type);
         // Overload Assignment Operator
-            AMateria& operator=(const AMateria &amateria);
+            Ice& operator=(const Ice &ice);
         // Getter Functions
             std::string const &getType() const;
         // Member Function
-            virtual AMateria* clone() const = 0;
-            virtual void use(ICharacter &target);
+            Ice* clone() const;
+            void use(ICharacter &target);
         // Destructor
-            virtual ~AMateria();
+            ~Ice();
 };
 
 #endif

@@ -1,42 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/09 15:10:13 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/10/10 10:22:37 by tstrassb         ###   ########.fr       */
+/*   Created: 2023/10/10 09:56:14 by tstrassb          #+#    #+#             */
+/*   Updated: 2023/10/10 10:00:20 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AMATERIA_HPP
-# define AMATERIA_HPP
+#ifndef CURE_HPP
+# define CURE_HPP
 
-#include <cstdlib>
-#include <string>
-#include <iostream>
+#include "AMateria.hpp"
 #include "ICharacter.hpp"
 
-class   AMateria
+class   Cure : public AMateria
 {
-    protected:
-        std::string _type;
-
     public:
         // Constructor
-            AMateria();
-            AMateria(const AMateria &amateria);
-            AMateria(std::string const &type);
+            Cure();
+            Cure(const Cure &cure);
+            Cure(std::string const &type);
         // Overload Assignment Operator
-            AMateria& operator=(const AMateria &amateria);
+            Cure& operator=(const Cure &cure);
         // Getter Functions
             std::string const &getType() const;
         // Member Function
-            virtual AMateria* clone() const = 0;
-            virtual void use(ICharacter &target);
+            Cure* clone() const;
+            void    use(ICharacter &target);
         // Destructor
-            virtual ~AMateria();
+            ~Cure();
 };
 
 #endif
