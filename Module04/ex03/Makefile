@@ -28,12 +28,12 @@ RESET	=	\e[0m
 all:		$(NAME)
 
 $(NAME):	$(OBJ) $(HEADERS)
-			@$(CC2) $(OBJ) -o $(NAME)
+			@$(CC) $(OBJ) -o $(NAME)
 			@printf	"$(GREEN)- $(NAME) ready!\n$(RESET)"
 
 $(OBJ_DIR)/%.o: %.cpp $(HEADERS)
 				@mkdir -p $(dir $@)
-				@$(CC2) $(CFLAGS2) -c $< -o $@
+				@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 			@$(RM) $(OBJ_DIR) $(OBJ)
