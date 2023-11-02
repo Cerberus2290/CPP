@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 07:47:31 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/09/29 09:31:48 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/11/02 13:58:38 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Point::Point() : _x(0), _y(0)
 Point::Point(float const &x, float const &y) : _x(x), _y(y)
 { }
 
-Point::Point(Point const &p) : _x(p.getX()), _y(p.getY())
+Point::Point(Point const &p) : _x(p._x), _y(p._y)
 { }
 
 Point::~Point()
@@ -32,16 +32,17 @@ std::ostream & operator<<(std::ostream &o, const Point &p)
 
 Point & Point::operator=(Point const & p)
 {
-    (void)p;
+    (Fixed)_x = p._x;
+    (Fixed)_y = p._y;
     return *this;
 }
 
-Fixed   Point::getX() const
+Fixed const  Point::getX() const
 {
-    return (this->_x);
+    return (_x);
 }
 
-Fixed   Point::getY() const
+Fixed const  Point::getY() const
 {
-    return (this->_y);
+    return (_y);
 }

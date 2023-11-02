@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 07:35:52 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/09/29 07:36:06 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/11/02 13:44:03 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ class Fixed
     public:
         //[* Contructors *]
         Fixed();
-        Fixed(const int);
-        Fixed(const float);
-        Fixed(const Fixed &);
+        Fixed( const int );
+        Fixed( const float );
+        Fixed( Fixed const & );
         ~Fixed();
         
         //[* Assignment Operators *]
-        Fixed & operator=(const Fixed &);
+        Fixed &operator=( Fixed const & );
 
         //[* Bool Operators *]
         bool    operator>(const Fixed &) const;
@@ -52,10 +52,10 @@ class Fixed
         Fixed   operator--(int);
 
         //[* Min / Max *]
-        static Fixed        &min(Fixed &, Fixed &);
-        static const Fixed  &min(const Fixed &, const Fixed &);
-        static Fixed        &max(Fixed &, Fixed &);
-        static const Fixed  &max(const Fixed &, const Fixed &);
+        static Fixed        &min( Fixed &, Fixed & );
+        static Fixed        &max( Fixed &, Fixed & );
+        static Fixed const  &min( Fixed const &,  Fixed const & );
+        static Fixed const  &max( Fixed const &,  Fixed const & );
 
         //[* Getter Function *]
         int getRawBits( void ) const;
