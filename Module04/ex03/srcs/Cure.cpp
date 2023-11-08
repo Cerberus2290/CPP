@@ -6,7 +6,7 @@
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 11:32:50 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/10/10 13:23:35 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/11/08 15:44:48 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,44 +14,32 @@
 
 // [**** Constructors ****]
 
-Cure::Cure() : AMateria()
+Cure::Cure() : AMateria("cure")
 {
-    _type = "cure";
     std::cout << "Cure has been created. --> default constructor" << std::endl;
+    _type = "cure";
 }
 
-Cure::Cure(const Cure &cure) : AMateria(cure)
+Cure::Cure(const Cure &cure) : AMateria("cure")
 {
     *this = cure;
     std::cout << "Cure has been created. --> copy constructor" << std::endl;
 }
 
-Cure::Cure(std::string const &type) : AMateria(type)
-{
-    _type = type;
-    std::cout << "Cure has been created. --> string constructor" << std::endl;
-}
-
 // [**** Overload Assignment Operators ****]
 
-Cure& Cure::operator=(Cure const &cure)
+Cure& Cure::operator=(const Cure &cure)
 {
-    this->_type = cure._type;
+    _type = cure.getType();
+    std::cout << "Cure has been created. --> copy assignment constructor" << std::endl;
     return *this;
-}
-
-// [**** Getter Functions ****]
-
-std::string const &Cure::getType() const
-{
-    return _type;
 }
 
 // [**** Member Functions ****]
 
 Cure* Cure::clone() const
 {
-    Cure *newCure = new Cure(*this);
+    Cure *newCure = new Cure();
     return newCure;
 }
 

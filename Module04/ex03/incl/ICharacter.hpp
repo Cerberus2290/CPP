@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 07:04:27 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/10/10 07:04:28 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/11/08 16:44:36 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <cstdlib>
 #include <string>
 #include <iostream>
+#include "AMateria.hpp"
 
 class   AMateria;
 
@@ -25,7 +26,7 @@ class   ICharacter
         // Getter Functions
             virtual std::string const & getName() const = 0;
         // Member Function
-            virtual void    equip(AMateria* m) = 0;
+            virtual void    equip(AMateria *) = 0;
             virtual void    unequip(int index) = 0;
             virtual void    use(int index, ICharacter& target) = 0;
         // Destructor

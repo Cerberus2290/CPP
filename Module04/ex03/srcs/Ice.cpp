@@ -6,7 +6,7 @@
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 13:02:39 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/10/10 13:23:28 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/11/08 15:47:48 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,44 +14,32 @@
 
 // [**** Constructors ****]
 
-Ice::Ice() : AMateria()
+Ice::Ice() : AMateria("ice")
 {
     _type = "ice";
     std::cout << "Ice has been created. --> default constructor" << std::endl;
 }
 
-Ice::Ice(const Ice &ice) : AMateria(ice)
+Ice::Ice(const Ice &ice) : AMateria("ice")
 {
     *this = ice;
     std::cout << "Ice has been created. --> copy constructor" << std::endl;
-}
-
-Ice::Ice(std::string const &type) : AMateria(type)
-{
-    _type = type;
-    std::cout << "Ice has been created. --> string constructor" << std::endl;
 }
 
 // [**** Overload Assignment Operators ****]
 
 Ice& Ice::operator=(Ice const &ice)
 {
-    this->_type = ice._type;
+    _type = ice.getType();
+    std::cout << "Ice has been created. --> copy assignment constructor" << std::endl;
     return *this;
-}
-
-// [**** Getter Functions ****]
-
-std::string const &Ice::getType() const
-{
-    return _type;
 }
 
 // [**** Member Functions ****]
 
 Ice* Ice::clone() const
 {
-    Ice *newIce = new   Ice(*this);
+    Ice *newIce = new   Ice();
     return newIce;
 }
 

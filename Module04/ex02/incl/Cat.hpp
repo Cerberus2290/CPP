@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 13:31:53 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/10/09 14:51:26 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/11/08 12:59:15 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "Animal.hpp"
 #include "Brain.hpp"
 
-class   Cat : public    Animal
+class   Cat : virtual public    Animal
 {
     public:
         // Constructor
@@ -30,8 +30,7 @@ class   Cat : public    Animal
             ~Cat();
     
     private:
-        // Attributes
-            Brain   *_brain;
+        Brain  *_brain;
 };
 
 #endif
