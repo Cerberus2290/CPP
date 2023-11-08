@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 10:22:20 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/10/05 11:44:26 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/11/08 07:16:14 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,19 @@
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
-class   DiamondTrap:    virtual public  ScavTrap,   virtual public  FragTrap
+class   DiamondTrap : public  ScavTrap, public  FragTrap
 {
     public:
         // Constructors
             DiamondTrap();
             DiamondTrap(std::string name);
-            DiamondTrap(const DiamondTrap &diamondtrap);
+            DiamondTrap(DiamondTrap const &diamondtrap);
         // Overload Assignment Operator
-            DiamondTrap& operator=(const DiamondTrap &diamondtrap);
+            DiamondTrap& operator=(DiamondTrap const &diamondtrap);
         // Member Functions
-            void    attack(const std::string& target);
+            using  ScavTrap::attack;
             void    whoAmI();
+            void    status();
         // Destructor
             ~DiamondTrap();
 

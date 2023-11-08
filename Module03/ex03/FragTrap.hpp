@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/05 10:21:14 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/10/05 11:45:39 by tstrassb         ###   ########.fr       */
+/*   Created: 2023/10/04 14:03:35 by tstrassb          #+#    #+#             */
+/*   Updated: 2023/11/08 07:14:08 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ class   FragTrap : virtual public ClapTrap
         // Constructors
             FragTrap();
             FragTrap(std::string name);
-            FragTrap(const FragTrap &fragtrap);
+            FragTrap(FragTrap const &fragtrap);
         // Overload Assignment Operator
-            FragTrap& operator=(const FragTrap &fragtrap);
+            FragTrap& operator=(FragTrap const &fragtrap);
         // Member functions
             void    highFivesGuys();
         // Destructor
-            virtual ~FragTrap();
+            ~FragTrap();
 };
 
 #endif
