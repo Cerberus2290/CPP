@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 08:43:11 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/10/06 08:45:55 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/11/08 10:01:33 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,11 @@ class   WrongAnimal
             WrongAnimal& operator=(const WrongAnimal &wronganimal);
         // Member Function
             void    makeSound() const;
-        // Getter Function
+        // Getter & Setter Functions
             std::string getType() const;
+            void        setType(std::string type);
         // Destructor
-        ~WrongAnimal();
+        virtual ~WrongAnimal();
 
     protected:
         // Attributes

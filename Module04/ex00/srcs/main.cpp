@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 09:20:22 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/10/06 09:36:05 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/11/08 10:42:42 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,32 @@
 
 int main( void )
 {
-    Animal      beast;
-    WrongAnimal wrongBeast;
-    WrongCat    wrongCat;
-    Cat         cat;
-    Dog         dog;
-    
-    std::cout << beast.getType() << std::endl;
-    std::cout << cat.getType() << std::endl;
-    std::cout << dog.getType() << std::endl;
-    std::cout << wrongBeast.getType() << std::endl;
-    std::cout << wrongCat.getType() << std::endl;
-    beast.makeSound();
-    cat.makeSound();
-    dog.makeSound();
-    wrongBeast.makeSound();
-    wrongCat.makeSound();
+    const Animal* animal = new Animal();
+    const Animal* dog = new Dog();
+    const Animal* cat = new Cat();
+    const Animal* cat2 = new Cat();
+
+    std::cout << dog->getType() << " " << std::endl;
+    std::cout << cat->getType() << " " << std::endl;
+    std::cout << animal->getType() << " " << std::endl;
+
+    dog->makeSound();
+    cat->makeSound();
+    animal->makeSound();
+    cat2->makeSound();
+
+    const WrongAnimal* wronganimal = new WrongCat();
+
+    wronganimal->makeSound();
+
+    std::cout << animal->getType() << " " << std::endl;
+    std::cout << cat->getType() << " " << std::endl;
+
+    delete animal;
+    delete dog;
+    delete cat;
+    delete wronganimal;
+    delete cat2;
 
     return 0;
 }
