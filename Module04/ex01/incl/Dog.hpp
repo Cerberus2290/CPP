@@ -6,7 +6,7 @@
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 15:21:28 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/10/05 15:30:39 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/11/08 13:53:25 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 # define DOG_HPP
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
-class   Dog : public    Animal
+class   Dog : virtual public    Animal
 {
     public:
         // Constructor
@@ -27,6 +28,9 @@ class   Dog : public    Animal
             void    makeSound() const;
         // Destructor
             ~Dog();
+    
+    private:
+        Brain   *_brain;
 };
 
 #endif
