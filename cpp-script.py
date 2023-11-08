@@ -137,13 +137,12 @@ re:			fclean all
 
         relative_path = input('Enter abolute path to [.cpp] file: ')
 
-        home_directory = os.path.expanduser("~")
-        file_path = os.path.join(home_directory, relative_path)
+        file_path = os.path.join(os.getcwd(), relative_path)
 
         os.makedirs(os.path.dirname(file_path), exist_ok=True)
 
         try:
-            with open(file_path, 'a') as file:
+            with open(file_path, 'w') as file:
                 file.write('\n'.join(lines) + '\n')
             print('SUCCESS!\nComments successfully added to [.cpp] file:', file_path)
             sys.exit(0)

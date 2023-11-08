@@ -3,34 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   bsp.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 09:33:21 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/09/29 09:42:12 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/11/02 13:54:07 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
+#include "bsp.hpp"
+
+Fixed   calculateArea(Point a, Point b, Point c)
+{
+    return ((a.getX() * (b.getY() - c.getY()) + b.getX() * (c.getY() - a.getY()) + c.getX() * (a.getY() - b.getY())) / Fixed(2.0f));
+}
 
 bool    bsp( Point const a, Point const b, Point const c, Point const point)
 {
-    Fixed   x1 = a.getX();
-    Fixed   y1 = a.getY();
-    Fixed   x2 = b.getX();
-    Fixed   y2 = b.getY();
-    Fixed   x3 = c.getX();
-    Fixed   y3 = c.getY();
-    Fixed   x = point.getX();
-    Fixed   y = point.getY();
-
-    Fixed   d1 = (x - x1) * (y2 - y1) - (x2 - x1) * (y - y1);
-    Fixed   d2 = (x - x2) * (y3 - y2) - (x3 - x2) * (y - y2);
-    Fixed   d3 = (x - x3) * (y1 - y3) - (x1 - x3) * (y - y3);
-
-    if (d1 >= 0 && d2 >= 0 && d3 >= 0)
-        return true;
-    else if (d1 <= 0 && d2 <= 0 && d3 <= 0)
-        return true;
-    else
-        return false;
+    Fixed   area, area1, area2, area3;
+    area = calculateArea(a, b, c);
+    area1 = calculateArea(a, b, point);
+    area2 = calculateArea(a, point, c);
+    area3 = calculateArea(point, b, c);
+    if (area < 0)
+        area = area * -1;
+    if (area1 < 0)
+        area1 = area1 * -1;
+    if (area2 < 0)
+        area2 = area2 * -1;
+    if (area3 < 0)
+        area3 = area3 * -1;
+    if (area == area1 + area2 + area3 && area1 != 0 && area2 != 0 && area3 != 0)
+        return (1);
+    return (0);
 }

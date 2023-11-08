@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/12 11:18:01 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/10/31 14:22:36 by tstrassb         ###   ########.fr       */
+/*   Created: 2023/10/10 10:04:54 by tstrassb          #+#    #+#             */
+/*   Updated: 2023/10/10 10:07:34 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#ifndef IMATERIASOURCE_HPP
+# define IMATERIASOURCE_HPP
 
-int main ( void )
+#include "AMateria.hpp"
+
+#define INVENTORY_SIZE  4
+
+class   IMateriaSource
 {
-    Fixed a;
-    Fixed b( a );
-    Fixed c;
-    c = b;
+    public:
+        virtual ~IMateriaSource() {}
+        virtual void learnMateria(AMateria*) = 0;
+        virtual AMateria* createMateria(std::string const & type) = 0;
+};
 
-    std::cout << a.getRawBits() << std::endl;
-    std::cout << b.getRawBits() << std::endl;
-    std::cout << c.getRawBits() << std::endl;
-    return 0;
-}
+#endif

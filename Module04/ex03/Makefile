@@ -1,14 +1,18 @@
-NAME	=   
+NAME	=	Materia
 
 CC		=	c++
 
+CC2		=	clang++
+
 CFLAGS	=	-Wall -Wextra -Werror -Wshadow -std=c++98
+
+CFLAGS2	=	-W -Wall -Werror -std=c++98
 
 RM		=	rm -rf
 
 OBJ_DIR	=	.objectFiles
 
-MAIN	=	
+MAIN	=	AMateria Character Cure Ice main MateriaSource
 
 SRCS	=	$(addsuffix .cpp, $(addprefix srcs/, $(MAIN)))
 OBJ		=	$(addprefix $(OBJ_DIR)/, $(SRCS:cpp=o))

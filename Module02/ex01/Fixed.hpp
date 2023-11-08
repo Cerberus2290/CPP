@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 09:25:59 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/09/26 09:35:25 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/11/02 13:09:41 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,18 @@ class   Fixed
         Fixed();
         Fixed(const int);
         Fixed(const float);
-        Fixed(const Fixed &f);
+        Fixed(const Fixed &fixed);
         ~Fixed();
-        Fixed & operator=(const Fixed &f);
+        Fixed & operator=(const Fixed &fixed);
         
-        int getRawBits( void ) const;
+        int     getRawBits( void ) const;
         void    setRawBits( int const raw );
         
         float   toFloat( void ) const;
-        int toInt( void ) const;
+        int     toInt( void ) const;
     
     private:
-        int _rawBits;
+        int                 _rawBits;
         static const int    _fractionalBits = 8;
 };
 

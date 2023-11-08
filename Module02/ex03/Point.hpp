@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 07:36:21 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/09/29 07:41:16 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/11/02 13:57:21 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ class Point
         Point();
         Point(float const &, float const &);
         Point(Point const &);
-        Point & operator=(Point const &);
         ~Point();
+        Point & operator=(Point const &);
 
-        Fixed   getX() const;
-        Fixed   getY() const;
+        Fixed const  getX() const;
+        Fixed const  getY() const;
     
     private:
         Fixed   const _x;
@@ -34,6 +34,5 @@ class Point
 };
 
 std::ostream & operator<<(std::ostream &, const Point &);
-bool    bsp( Point const a, Point const b, Point const c, Point const point);
 
 #endif
