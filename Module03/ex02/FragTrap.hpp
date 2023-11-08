@@ -6,7 +6,7 @@
 /*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 14:03:35 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/10/04 14:08:41 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/11/08 07:00:46 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ class   FragTrap : public ClapTrap
         // Constructors
             FragTrap();
             FragTrap(std::string name);
-            FragTrap(const FragTrap &fragtrap);
+            FragTrap(FragTrap const &fragtrap);
         // Overload Assignment Operator
-            FragTrap& operator=(const FragTrap &fragtrap);
+            FragTrap& operator=(FragTrap const &fragtrap);
         // Member functions
             void    highFivesGuys();
         // Destructor

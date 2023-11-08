@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/04 14:02:51 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/10/04 14:03:01 by tstrassb         ###   ########.fr       */
+/*   Created: 2023/10/04 12:43:59 by tstrassb          #+#    #+#             */
+/*   Updated: 2023/11/08 06:44:46 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ class   ScavTrap: public    ClapTrap
         // Constructors
             ScavTrap();
             ScavTrap(std::string name);
-            ScavTrap(const ScavTrap &scavtrap);
+            ScavTrap(ScavTrap const &scavtrap);
         // Overload Assignment Operator
-            ScavTrap& operator=(const ScavTrap &scavtrap);
+            ScavTrap& operator=(ScavTrap const &scavtrap);
         // Member Functions
             void    attack(const std::string& target);
             void    guardGate();
