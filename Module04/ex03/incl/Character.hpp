@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 07:04:14 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/10/10 07:34:26 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/11/08 16:50:45 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,22 @@ class   Character : public ICharacter
 {
     private:
         //Attributes
-            std::string _name;
             AMateria    *_inventory[INVENTORY_SIZE];
+            AMateria    *_ground[1000];
+            int         count_ground;
+            std::string _name;
 
     public:
         // Constructor
             Character();
-            Character(const std::string &name);
+            Character(std::string name);
             Character(const Character &character);
         // Overload Assignment Operator
             Character& operator=(const Character &character);
         // Getter Functions
             std::string const & getName() const;
+            AMateria const *getInventory(int index) const;
+            AMateria const *getGround(int index) const;
         // Member Function
             void equip(AMateria* m);
             void unequip(int index);

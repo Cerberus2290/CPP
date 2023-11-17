@@ -3,32 +3,49 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/09 15:01:01 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/10/09 15:05:09 by tstrassb         ###   ########.fr       */
+/*   Created: 2023/10/06 13:43:18 by tstrassb          #+#    #+#             */
+/*   Updated: 2023/11/08 14:16:36 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/Animal.hpp"
-#include "../incl/WrongAnimal.hpp"
-#include "../incl/WrongCat.hpp"
+#include "../incl/Brain.hpp"
 #include "../incl/Cat.hpp"
 #include "../incl/Dog.hpp"
-#include "../incl/Brain.hpp"
+#include "../incl/WrongAnimal.hpp"
+#include "../incl/WrongCat.hpp"
 
 int main( void )
 {
-    Animal  *home[10];
+    Animal *animals[10];
+    Animal *doge = new Dog();
+    Animal *cat = new Cat();
+    doge->makeSound();
+    cat->makeSound();
+    
+    Animal *test;
+    test = cat;
+    test->makeSound();
 
-    for (size_t i(0); i < 10; ++i)
+    for (int i = 0; i < 10; i++)
     {
         if (i < 5)
-            home[i] = new Dog();
+            animals[i] = new Cat();
         else
-            home[i] = new Cat();
+            animals[i] = new Dog();
     }
-    for (size_t i(0); i < 10; ++i)
-        delete home[i];
+    for (int i = 0; i < 10; i++)
+    {
+        animals[i]->makeSound();
+    }
+    for (int i = 0; i < 10; i++)
+    {
+        delete animals[i];
+    }
+    delete doge;
+    delete cat;
+    
     return 0;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 13:29:18 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/10/09 14:49:57 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/11/08 12:58:11 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,12 @@ class   Brain
         // Constructor
             Brain();
             Brain(const Brain &brain);
+            Brain(std::string ideas);
         // Overload Assignment Operator
             Brain& operator=(const Brain &brain);
+        // Member Functions
+            std::string getIdea(int index) const;
+            void        setIdea(int index, std::string idea);
         // Destructor
             ~Brain();
 

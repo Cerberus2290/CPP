@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 13:43:18 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/10/06 14:05:25 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/11/08 13:54:07 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,35 @@
 
 int main( void )
 {
-    std::cout << "---HOME---" << std::endl;
-
-    Animal  *home[10];
-
-    for (size_t i(0); i < 10; i++)
+    Animal *animals[10];
+    Cat *cats = new Cat();
+    Cat *cats2 = new Cat();
+    *cats = *cats2;
+    for (int i = 0; i < 10; i++)
     {
         if (i < 5)
-            home[i] = new Dog();
+            animals[i] = new Cat();
         else
-            home[i] = new Cat();
+            animals[i] = new Dog();
     }
-    for (size_t i(0); i < 10; i++)
-        delete home[i];
+    for (int i = 0; i < 10; i++)
+    {
+        animals[i]->makeSound();
+    }
+    for (int i = 0; i < 10; i++)
+    {
+        delete animals[i];
+    }
+    delete cats;
+    delete cats2;
+
+    WrongAnimal* wronganimal = new WrongCat();
+    Animal* meta = new Animal();
+    wronganimal->makeSound();
+    meta->makeSound();
+
+    delete wronganimal;
+    delete meta;
+
     return 0;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 15:21:28 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/10/09 14:52:44 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/11/08 13:53:25 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "Animal.hpp"
 #include "Brain.hpp"
 
-class   Dog : public    Animal
+class   Dog : virtual public    Animal
 {
     public:
         // Constructor
@@ -30,8 +30,7 @@ class   Dog : public    Animal
             ~Dog();
     
     private:
-        // Attributes
-            Brain   *_brain;
+        Brain   *_brain;
 };
 
 #endif

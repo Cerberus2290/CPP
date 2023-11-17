@@ -6,7 +6,7 @@
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 15:10:13 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/10/10 10:22:37 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/11/08 14:26:03 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@
 #include <iostream>
 #include "ICharacter.hpp"
 
-class   AMateria
+class ICharacter;
+
+class AMateria
 {
     protected:
         std::string _type;
@@ -36,7 +38,7 @@ class   AMateria
             virtual AMateria* clone() const = 0;
             virtual void use(ICharacter &target);
         // Destructor
-            virtual ~AMateria();
+            virtual ~AMateria() = 0;
 };
 
 #endif

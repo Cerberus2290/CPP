@@ -6,7 +6,7 @@
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 13:20:16 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/10/05 13:23:47 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/11/08 09:53:57 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,12 @@ class   Animal
         // Overload Assignment Operator
             Animal& operator=(const Animal &animal);
         // Member Functions
-            void    makeSound() const;
-        // Getter Function
+            virtual void    makeSound() const;
+        // Getter & Setter Functions
             std::string getType() const;
+            void        setType(std::string type);
         // Destructor
-            ~Animal();
+            virtual ~Animal();
 
     protected:
         //Attribute

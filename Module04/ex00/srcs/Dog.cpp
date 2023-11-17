@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 15:28:35 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/10/06 09:35:42 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/11/08 09:59:04 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ Dog::Dog()
     std::cout << "Dog has been created. --> default constructor" << std::endl;
 }
 
-Dog::Dog(const Dog & dog) : Animal(dog)
+Dog::Dog(const Dog & dog) : Animal()
 {
-    *this = dog;
+    _type = dog.getType();
     std::cout << "Dog has been created. --> copy constructor" << std::endl;
 }
 
@@ -30,7 +30,8 @@ Dog::Dog(const Dog & dog) : Animal(dog)
 
 Dog&    Dog::operator=(const Dog &dog)
 {
-    _type = dog._type;
+    _type = dog.getType();
+    std::cout << "Dog has been created. --> copy assignment constructor" << std::endl;
     return *this;
 }
 

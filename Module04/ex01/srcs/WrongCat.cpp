@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 09:14:37 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/10/06 09:36:18 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/11/08 13:19:55 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ WrongCat::WrongCat()
 
 WrongCat::WrongCat(const WrongCat &wrongcat) : WrongAnimal(wrongcat)
 {
-    *this = wrongcat;
+    _type = wrongcat.getType();
     std::cout << "WrongCat has been created. --> copy constructor" << std::endl;
 }
 
@@ -30,8 +30,16 @@ WrongCat::WrongCat(const WrongCat &wrongcat) : WrongAnimal(wrongcat)
 
 WrongCat&   WrongCat::operator=(const WrongCat &wrongcat)
 {
-    _type = wrongcat._type;
+    _type = wrongcat.getType();
+    std::cout << "WrongCat has been created. --> copy assignment constructor" << std::endl;
     return *this;
+}
+
+// [**** Member Functions ****]
+
+void    WrongCat::makeSound() const
+{
+    std::cout << "Meow" << std::endl;
 }
 
 // [**** Destructor ****]

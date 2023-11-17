@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/05 13:20:16 by tstrassb          #+#    #+#             */
+/*   Updated: 2023/11/08 12:56:10 by tstrassb         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef ANIMAL_HPP
 # define ANIMAL_HPP
 
@@ -8,20 +20,21 @@
 class   Animal
 {
     public:
-        // Constructor
+        // Constructors
             Animal();
             Animal(const Animal &animal);
         // Overload Assignment Operator
             Animal& operator=(const Animal &animal);
-        // Member Function
-            virtual void    makeSound() const = 0;
-        // Getter Function
+        // Member Functions
+            virtual void    makeSound() const;
+        // Getter & Setter Functions
             std::string getType() const;
+            void        setType(std::string type);
         // Destructor
             virtual ~Animal();
-    
+
     protected:
-        // Attribute
+        //Attribute
             std::string _type;
 };
 

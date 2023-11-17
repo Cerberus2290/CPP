@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 13:37:10 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/10/06 14:04:31 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/11/08 13:09:46 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ Brain::Brain()
 
 Brain::Brain(const Brain &brain)
 {
-    *this = brain;
+    for (int i = 0; i < BRAIN_SIZE; i++)
+        _ideas[i] = brain.getIdea(i);
     std::cout << "Brain has been created. --> copy constructor" << std::endl;
 }
 
@@ -29,9 +30,30 @@ Brain::Brain(const Brain &brain)
 
 Brain&  Brain::operator=(const Brain &brain)
 {
-    for (size_t i(0); i < BRAIN_SIZE; ++i)
-        _ideas[i] = brain._ideas[i];
+    for (int i =0; i < BRAIN_SIZE; i++)
+        _ideas[i] = brain.getIdea(i);
+    std::cout << "Brain has been created. --> copy assignment constructor" << std::endl;
     return *this;
+}
+
+// [**** Getter & Setter Functions ****]
+
+std::string Brain::getIdea(int index) const
+{
+    if (index < 0 || index >= BRAIN_SIZE)
+    {
+        std::cout << "Index out of range" << std::endl;
+        return NULL;
+    }
+    return _ideas[index];
+}
+
+void    Brain::setIdea(int index, std::string idea)
+{
+    if (index < 0 || index >= BRAIN_SIZE)
+        std::cout << "Index out of range" << std::endl;
+    else
+        _ideas[index] = idea;
 }
 
 // [**** Destructor ****]

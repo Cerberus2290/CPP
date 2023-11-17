@@ -6,7 +6,7 @@
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 13:10:18 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/10/10 13:18:12 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/11/08 15:57:30 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 MateriaSource::MateriaSource()
 {
-    for (size_t i(0); i < INVENTORY_SIZE; ++i)
+    for (size_t i(0); i < INVENTORY_SIZE; i++)
         _slots[i] = NULL;
     std::cout << "MateriaSource has been created. --> default constructor" << std::endl;
 }
@@ -31,8 +31,16 @@ MateriaSource::MateriaSource(const MateriaSource &matsource)
 
 MateriaSource& MateriaSource::operator=(const MateriaSource &matsource)
 {
-    for (size_t i(0); i < INVENTORY_SIZE; ++i)
-        _slots[i] = matsource._slots[i];
+    for (size_t i(0); i < INVENTORY_SIZE; i++)
+    {
+        if (_slots[i])
+            delete _slots[i];
+        if (matsource._slots[i] == NULL)
+            _slots[i] = NULL;
+        else
+            _slots[i] = matsource._slots[i]->clone();
+    }
+    std::cout << "MateriaSource has been created. --> copy assignment constructor" << std::endl;
     return *this;
 }
 
@@ -40,14 +48,21 @@ MateriaSource& MateriaSource::operator=(const MateriaSource &matsource)
 
 void    MateriaSource::learnMateria(AMateria *amat)
 {
-    for (size_t i(0); i < INVENTORY_SIZE; ++i)
+    if (amat == NULL)
+    {
+        std::cout << "MateriaSource can't learn this materia. --> learnMateria" << std::endl;
+        return ;
+    }
+    for (int i = 0; i < INVENTORY_SIZE; i++)
     {
         if (_slots[i] == NULL)
         {
             _slots[i] = amat;
-            break ;
+            std::cout << "MateriaSource has learned " << amat->getType() << "at slot number: " << i << std::endl;
+            return ;
         }
     }
+    std::cout << "MateriaSource is full of Materia." << std::endl;
 }
 
 AMateria*   MateriaSource::createMateria(std::string const &type)
@@ -64,7 +79,10 @@ AMateria*   MateriaSource::createMateria(std::string const &type)
 
 MateriaSource::~MateriaSource()
 {
-    for (size_t i(0); i < INVENTORY_SIZE; ++i)
-        delete _slots[i];
+    for (size_t i(0); i < INVENTORY_SIZE; i++)
+    {
+        if (_slots[i])
+            delete _slots[i];
+    }
     std::cout << "MateriaSource has been destroyed. --> deconstructor" << std::endl;
 }
