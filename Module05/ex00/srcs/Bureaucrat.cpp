@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 06:49:04 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/11/17 07:09:38 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/11/17 16:02:20 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,11 @@ std::string const Bureaucrat::getName() const
 int Bureaucrat::getGrade() const
 {
     return _grade;
+}
+
+void Bureaucrat::setName(std::string name)
+{
+    name = _name;
 }
 
 // [**** Destructor ****]
