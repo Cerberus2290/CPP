@@ -6,7 +6,7 @@
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 06:49:04 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/11/20 13:02:28 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/11/20 16:50:55 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,16 +71,34 @@ void Bureaucrat::decrementGrade()
         _grade++;
 }
 
-void Bureaucrat::signForm(Form& form)
+void Bureaucrat::signForm(AForm& form)
 {
     try
     {
         form.gettingSigned(*this);
         std::cout << *this << " signed the form " << form << std::endl;
     }
-    catch (Form::GradeTooLowException &except)
+    catch (AForm::GradeTooLowException &except)
     {
         std::cerr << *this << " cannot sign the form " << form << " because Bureaucrat does not have enough grade." << std::endl;
+    }
+}
+
+void Bureaucrat::executeForm(AForm const &form) const
+{
+    try
+    {
+        form.gettingExecuted(*this);
+        std::cout << *this << " executed the form " << form.getName() << std::endl;
+    }
+    catch (AForm::GradeTooLowException &except)
+    {
+        std::cerr << *this << " cannot execute the form " << form << std::endl;
+    }
+    catch (AForm::FormNotSignedException &except)
+    {
+        std::cerr << "Form " << form.getName() << " is not signed yet." << std::endl;
+        std::cerr << "Form Info: " << form << std::endl;
     }
 }
 

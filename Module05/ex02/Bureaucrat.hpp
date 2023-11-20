@@ -6,7 +6,7 @@
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 06:40:05 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/11/20 13:12:40 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/11/20 16:46:14 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ class   Bureaucrat
         // Member Function
         void incerementGrade();
         void decrementGrade();
-        void signForm(Form&);
-        void executeForm(Form const &) const;
+        void signForm(AForm&);
+        void executeForm(AForm const &) const;
 
         // Getter & Setter Functions
         std::string const getName() const;

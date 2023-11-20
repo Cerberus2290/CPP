@@ -16,7 +16,7 @@ class   ShrubberyCreationForm : public AForm
 
     public:
         // Constructor
-        ShrubberyCreationForm();
+        ShrubberyCreationForm(std::string);
         ShrubberyCreationForm(const ShrubberyCreationForm&);
 
         // Overload Assignment Operator
