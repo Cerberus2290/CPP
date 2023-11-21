@@ -6,7 +6,7 @@
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 06:40:05 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/11/20 16:46:14 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/11/21 14:59:50 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <iostream>
 # include <exception>
 
-class   Form;
+class   AForm;
 
 class   Bureaucrat
 {
