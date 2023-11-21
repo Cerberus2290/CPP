@@ -1,4 +1,4 @@
-NAME	=   
+NAME	=   Intern
 
 CC		=	c++
 
@@ -8,7 +8,7 @@ RM		=	rm -rf
 
 OBJ_DIR	=	.objectFiles
 
-MAIN	=	
+MAIN	=	AForm Bureaucrat Intern main ShrubberyCreationForm RobotomyRequestForm PresidentialPardonForm
 
 SRCS	=	$(addsuffix .cpp, $(addprefix srcs/, $(MAIN)))
 OBJ		=	$(addprefix $(OBJ_DIR)/, $(SRCS:cpp=o))
