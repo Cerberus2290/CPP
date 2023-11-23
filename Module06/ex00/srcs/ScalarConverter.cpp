@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 06:44:00 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/11/23 07:31:48 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/11/23 09:33:00 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,16 +129,106 @@ void ScalarConverter::convertInput()
     int i;
     for (i = 0; i < 4; i++)
     {
-        if (this->getType() != NAN_INF && this->getDouble() <= UCHAR_MAX && this->getDouble() >= 0)
+        if (this->getType() == types[i])
         {
-            if (isprint(this->getChar()))
-                std::cout << "char: '" << this->getChar() << "'" << std::endl;
-            else
-                std::cout << "char: cannot be displayed" << std::endl;
+            (this->*functionsPTRS[i])();
+            break ;
         }
-        else
-            std::cout << "char: impossible to display" << std::endl;
     }
+    if (i == 4)
+        throw ConversionException();
+}
+
+void ScalarConverter::printOutput() const
+{
+    if (this->getType() != NAN_INF && this->getDouble() <= UCHAR_MAX && this->getDouble() >= 0)
+    {
+        if (isprint(this->getChar()))
+            std::cout << "char: '" << this->getChar() << "'" << std::endl;
+        else
+            std::cout << "char: not possible to display" << std::endl;
+    }
+    else
+        std::cout << "char: impossible to display" << std::endl;
+    
+    if (this->getType() != NAN_INF && this->getDouble() >= std::numeric_limits<int>::min() && this->getDouble() <= std::numeric_limits<int>::max())
+        std::cout << "int: " << this->getInt() << std::endl;
+    else
+        std::cout << "int: impossible to display" << std::endl;
+    
+    if (this->getType() != NAN_INF)
+    {
+        std::cout << "float: " << this->getFloat();
+        if (this->getFloat() - this->getInt() == 0)
+            std::cout << ".0f" << std::endl;
+        else
+            std::cout << "f" << std::endl;
+    }
+    else
+    {
+        if (this->getInput() == "nan" || this->getInput() == "nanf")
+            std::cout << "float: nanf" << std::endl;
+        else if (this->getInput()[0] == '+')
+            std::cout << "float: +inff" << std::endl;
+        else
+            std::cout << "float: -inff" << std::endl;
+    }
+    
+    if (this->getType() != NAN_INF)
+    {
+        std::cout << "double: " << this->getDouble();
+        if (this->getDouble() < std::numeric_limits<int>::min() || this->getDouble() > std::numeric_limits<int>::max()
+            || this->getDouble() - this->getInt() == 0)
+            std::cout << ".0" << std::endl;
+        else
+            std::cout << std::endl;
+    }
+    else
+    {
+        if (this->getInput() == "nan" || this->getInput() == "nanf")
+            std::cout << "double: nan" << std::endl;
+        else if (this->getInput()[0] == '+')
+            std::cout << "double: +inf" << std::endl;
+        else
+            std::cout << "double: -inf" << std::endl;
+    }
+}
+
+// [**** Exception ****]
+const char *ScalarConverter::ConversionException::what() const throw()
+{
+    return "Conversion Error: not possible to display or wrong input";
+};
+
+// [**** Getters ****]
+std::string ScalarConverter::getInput() const
+{
+    return this->_input;
+}
+
+int ScalarConverter::getType() const
+{
+    return this->_type;
+}
+
+char ScalarConverter::getChar() const
+{
+    return this->_char;
+}
+
+int ScalarConverter::getInt() const
+{
+    return this->_int;
+}
+
+float ScalarConverter::getFloat() const
+{
+    return this->_float;
+}
+
+double ScalarConverter::getDouble() const
+{
+    return this->_double;
 }
 
 // [**** Destructor ****]

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 06:36:26 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/11/23 06:43:22 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/11/23 09:18:15 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ class   ScalarConverter
         void convertFloat(void);
         void convertDouble(void);
 
-        void printOutput(void);
+        void printOutput(void) const;
 
         // Getters
         std::string getInput(void) const;
