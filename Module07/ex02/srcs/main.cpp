@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 16:31:42 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/11/23 16:43:59 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/11/24 06:58:13 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,37 @@ int main(int, char**)
         std::cout << "test[1]:\t" << test[1] << std::endl;
         std::cout << "temp[1]:\t" << temp[1] << std::endl << std::endl;
     }
+
+    for (int i = 0; i < MAX_VALUE; i++)
+    {
+        if (mirror[i] != num[i])
+        {
+            std::cerr << "did not save the same value!" << std::endl;
+            return 1;
+        }
+    }
+    try
+    {
+        num[-2] = 0;
+    }
+    catch (const std::exception &except)
+    {
+        std::cerr << except.what() << std::endl;
+    }
+    try
+    {
+        num[MAX_VALUE] = 0;
+    }
+    catch (const std::exception &except)
+    {
+        std::cerr << except.what() << std::endl;
+    }
+
+    for (int i = 0; i < MAX_VALUE; i++)
+    {
+        num[i] = rand();
+    }
+    delete [] mirror;
+    
     return 0;
 }
