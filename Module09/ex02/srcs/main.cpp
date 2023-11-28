@@ -6,7 +6,7 @@
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 09:53:24 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/11/28 10:23:19 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/11/28 17:02:40 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,44 +14,39 @@
 
 int main(int argc, char **argv)
 {
-    if (argc == 1)
+    if (argc < 2)
     {
-        std::cerr << "Syntax Error: Usage ./PmergeMe [positive list of int]" << std::endl;
+        std::cerr << "Syntax Error: " << argv[0] << " positive int seperated by spaces" << std::endl;
         return 1;
     }
-    
-    std::list<int> _list;
-    std::deque<int> _deque;
-    
-    if (inputControl(argc, argv, _list, _deque) == false)
-    {
-        std::cerr << "Error main: only positive int allowed" << std::endl;
-        return 1;
-    }
-    // Print: before to standard out
-    std::cout << "Before:\t";
-    for (std::list<int>::iterator ito = _list.begin(); ito != _list.end(); ito++)
-        std::cout << *ito << " ";
-    std::cout << std::endl;
-    // Sort using std::list and start timer
-    std::clock_t time_begin = std::clock();
-    mergeInsertionSort(_list);
-    std::clock_t time_end = std::clock();
-    // Print: after to standard out
-    std::cout << "After:\t";
-    for (std::list<int>::iterator ito = _list.begin(); ito != _list.end(); ito++)
-        std::cout << *ito << " ";
-    std::cout << std::endl;
-    // Print: time for list sort
-    double time_sort = static_cast<double>(time_end - time_begin) / (double)CLOCKS_PER_SEC * 1000000;
-    std::cout << "Time to process a range of " << "[" << _list.size() << "]" << " elements with std::list<int> sort: " << time_sort << " us." << std::endl;
-    // Sort using std::deque and start timer
-    time_begin = std::clock();
-    mergeInsertionSort(_deque);
-    time_end = std::clock();
-    // Print: time for deque sort
-    time_sort = static_cast<double>(time_end - time_begin) / CLOCKS_PER_SEC * 1000000;
-    std::cout << "Time to process a range of " << "[" << _deque.size() << "]" << " elements with std::deque<int> sort: " << time_sort << " us." << std::endl;
 
-    return 0;
+    std::vector<int> sequenceVector;
+    std::list<int> sequenceList;
+
+    for (int i = 1; i < argc; i++)
+    {
+        int num = std::atoi(argv[i]);
+        sequenceVector.push_back(num);
+        sequenceList.push_back(num);
+    }
+    
+    clock_t startVector = clock();
+    fordJohnsonVector(sequenceVector);
+    clock_t endVector = clock();
+
+    clock_t startList = clock();
+    fordJohnsonList(sequenceList);
+    clock_t endList = clock();
+
+    std::cout << "Before:\t";
+    for (std::vector<int>::iterator ito = sequenceVector.begin(); ito != sequenceVector.end(); ++ito)
+        std::cout << *ito << " ";
+    std::cout << std::endl;
+
+    std::cout << "After:\t";
+    for (std::vector<int>::iterator ito = sequenceVector.begin(); ito != sequenceVector.end(); ++ito)
+        std::cout << *ito << " ";
+    std::cout << std::endl;
+
+    std::cout << "Time to process a range of [" << sequenceVector.size() << "] elements with std::vector<int> : " << static_cast
 }

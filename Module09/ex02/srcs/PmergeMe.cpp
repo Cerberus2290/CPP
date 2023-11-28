@@ -6,35 +6,71 @@
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 09:48:20 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/11/28 09:52:59 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/11/28 16:48:15 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../PmergeMe.hpp"
 
-bool inputControl(int argc, char **argv, std::list<int> &_list, std::deque<int> &_deque)
+void fordJohnsonVector(std::vector<int>& sequence)
 {
-    std::string word;
-    std::stringstream ss;
-    long list;
-    char* endpointer = NULL;
+    std::vector<int> machineA, machineB;
 
-    for (int i = 1; i < argc; i++)
-        ss << argv[i] << " ";
-    while (ss >> word)
+    for (std::vector<int>::iterator ito = sequence.begin(); ito != sequence.end(); ++ito)
     {
-        endpointer = NULL;
-        list = strtol(word.c_str(), &endpointer, 10);
-        if (*endpointer == '\0' && list >= 0 && list < INT_MAX)
+        int num = *ito;
+        if (num < 0)
         {
-            _list.push_back(list);
-            _deque.push_back(list);
+            std::cerr << "Error fordJohnsonVector: only positive int allowed" << std::endl;
+            exit(1);
         }
+        else if (num == 0)
+        {
+            std::cerr << "Error fordJohnsonVector: zero is not allowed" << std::endl;
+            exit(1);
+        }
+        if (num % 2 == 0)
+            machineA.push_back(num);
         else
-        {
-            std::cout << word << " ";
-            return false;
-        }
+            machineB.push_back(-num);
     }
-    return true;
+    std::sort(machineA.begin(), machineA.end());
+    std::sort(machineB.begin(), machineB.end());
+    
+    sequence.clear();
+    for (std::vector<int>::iterator ito = machineA.begin(); ito != machineA.end(); ++ito)
+        sequence.push_back(*ito);
+    for (std::vector<int>::iterator ito = machineB.begin(); ito != machineB.end(); ++ito)
+        sequence.push_back(-(*ito));
+}
+
+void fordJohnsonList(std::list<int>& sequence)
+{
+    std::list<int> machineA, machineB;
+
+    for (std::list<int>::iterator ito = sequence.begin(); ito != sequence.end(); ++ito)
+    {
+        int num = *ito;
+        if (num < 0)
+        {
+            std::cerr << "Error fordJohnsonList: only positive int allowed" << std::endl;
+            exit(1);
+        }
+        else if (num == 0)
+        {
+            std::cerr << "Error fordJohnsonList: zero is not allowed" << std::endl;
+            exit(1);
+        }
+        if (num % 2 == 0)
+            machineA.push_back(num);
+        else
+            machineB.push_back(-num);
+    }
+    machineA.sort();
+    machineB.sort();
+
+    sequence.clear();
+    sequence.merge(machineA);
+    for (std::list<int>::iterator ito = machineB.begin(); ito != machineB.end(); ++ito)
+        sequence.push_back(-(*ito));
 }
