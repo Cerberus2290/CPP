@@ -8,7 +8,7 @@ RM		=	rm -rf
 
 OBJ_DIR	=	.objectFiles
 
-MAIN	=	
+MAIN	=	main RPN
 
 SRCS	=	$(addsuffix .cpp, $(addprefix srcs/, $(MAIN)))
 OBJ		=	$(addprefix $(OBJ_DIR)/, $(SRCS:cpp=o))

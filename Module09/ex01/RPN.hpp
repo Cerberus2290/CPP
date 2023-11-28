@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 15:18:21 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/11/27 15:33:08 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/11/28 07:24:59 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,14 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+#include <cstdlib>
 
 typedef enum
 {
     add         = '+',
     substract   = '-',
     divide      = '/',
-    mulitpy     = '*',
+    mulitply    = '*',
 } operant_t;
 
 class   RPN
