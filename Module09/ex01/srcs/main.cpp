@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 07:12:57 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/11/28 07:21:31 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/11/28 08:45:47 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main(int argc, char **argv)
 {
     if (argc != 2)
     {
-        std::cerr << "Syntax Error: Usage: ./RPN [equation]" << std::endl;
+        std::cerr << "Syntax Error: Usage: ./RPN [equation as a string]" << std::endl;
         return 1;
     }
     RPN::parameter = argv[1];
