@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 09:53:24 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/11/28 17:02:40 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/11/29 05:35:26 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,13 @@ int main(int argc, char **argv)
     std::cout << std::endl;
 
     std::cout << "After:\t";
-    for (std::vector<int>::iterator ito = sequenceVector.begin(); ito != sequenceVector.end(); ++ito)
+    for (std::list<int>::iterator ito = sequenceList.begin(); ito != sequenceList.end(); ++ito)
         std::cout << *ito << " ";
     std::cout << std::endl;
 
-    std::cout << "Time to process a range of [" << sequenceVector.size() << "] elements with std::vector<int> : " << static_cast
+    std::cout << "Time to process a range of [" << sequenceVector.size() << "] elements with std::vector<int> : " << static_cast<double>(endVector - startVector) / CLOCKS_PER_SEC * 1000000 << " s." << std::endl;
+    
+    std::cout << "Time to process a range of [" << sequenceList.size() << "] elements with std::list<int> : " << static_cast<double>(endList - startList) / CLOCKS_PER_SEC * 1000000 << " s." << std::endl;
+
+    return 0;
 }
